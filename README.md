@@ -7,7 +7,6 @@ The idea is combining the unit testing (pytest) and web automation (selenium).
 Then the final report will be provided in form of html page with list test case and the status (**pass, failed, skipped,or error**).
 
 ## 2. Dependencies Required
-
 Some python dependencies needed, check in the `requirements.txt`,  those are:
 - selenium
 - webdriver-manager

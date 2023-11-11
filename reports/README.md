@@ -1,0 +1,1 @@
+Directory to store any output from the automation script.

@@ -4,26 +4,33 @@ from datetime import datetime
 from pathlib import Path
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ServiceChrome
-from selenium.webdriver.firefox.service import Service as ServiceFirefox
-from selenium.webdriver.edge.service import Service as ServiceEdge
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.service import Service as ServiceChrome
+# from selenium.webdriver.firefox.service import Service as ServiceFirefox
+# from selenium.webdriver.edge.service import Service as ServiceEdge
+# from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.firefox import GeckoDriverManager
+# from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 driver = None
 
 
 @pytest.fixture(autouse=True)
-def setup(request, browser, url):
+# def setup(request, browser, url):
+def setup(request, browser):
     global driver
     if browser == "chrome":
-        driver = webdriver.Chrome(service=ServiceChrome(ChromeDriverManager().install()))
-    elif browser == "firefox":
-        driver = webdriver.Firefox(service=ServiceFirefox(GeckoDriverManager().install()))
-    elif browser == "edge":
-        driver = webdriver.Edge(service=ServiceEdge(EdgeChromiumDriverManager().install()))
-    driver.get(url)
+        # driver = webdriver.Chrome(service=ServiceChrome(ChromeDriverManager().install()))
+        service = Service(executable_path='../utilities/chromedriver.exe')
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--disable-software-rasterizer")
+        driver = webdriver.Chrome(service= service, options= chrome_options)  # Optional argument, if not specified will search path.
+    # elif browser == "firefox":
+    #     driver = webdriver.Firefox(service=ServiceFirefox(GeckoDriverManager().install()))
+    # elif browser == "edge":
+    #     driver = webdriver.Edge(service=ServiceEdge(EdgeChromiumDriverManager().install()))
+    # driver.get(url)
     driver.maximize_window()
     request.cls.driver = driver
     request.cls.url = url
@@ -33,7 +40,7 @@ def setup(request, browser, url):
 
 def pytest_addoption(parser):
     parser.addoption("--browser")
-    parser.addoption("--url")
+    # parser.addoption("--url")
 
 
 @pytest.fixture(scope="class", autouse=True)
@@ -41,9 +48,9 @@ def browser(request):
     return request.config.getoption("--browser")
 
 
-@pytest.fixture(scope="class", autouse=True)
-def url(request):
-    return request.config.getoption("--url")
+# @pytest.fixture(scope="class", autouse=True)
+# def url(request):
+#     return request.config.getoption("--url")
 
 
 # @pytest.hookimpl(tryfirst=True)

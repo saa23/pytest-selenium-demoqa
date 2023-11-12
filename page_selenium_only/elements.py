@@ -31,7 +31,7 @@ from commons.take_screenshot import take_ss
     7. Broken Links - Images
     8. Upload and Download
     9. Dynamic Properties
-    """
+"""
 
 def text_box(target_url):
         # =====================

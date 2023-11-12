@@ -1,6 +1,6 @@
 import pandas as pd
-from commons import*
-from pages import elements
+from commons import *
+from page_selenium_only import elements
 
 
 if __name__ == '__main__':

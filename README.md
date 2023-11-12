@@ -25,14 +25,18 @@ pip install -r requirements.txt
 ```
 
 ## 3. How to run the script?
-pytest --browser [choose browser] --url [url retailer website] --html=[path/to/file/report.html]
+```
+pytest --browser [choose browser] --url [url retailer website] --html=[path/to/file/report.html]  --self-contained-html
+```
 
 for example:<br>
-pytest --browser chrome --url https://demoqa.com/ --html=reports/report.html
+```
+pytest --browser chrome --url https://demoqa.com/ --html=reports/report.html  --self-contained-html
+```
 
 After that, the script will run the test cases one by one.
 
-The final report directory is defined from `--html=[path/to/file/report.html]
+The final report directory is defined from `--html=[path/to/file/report.html]`
 
 
 ## Learn More

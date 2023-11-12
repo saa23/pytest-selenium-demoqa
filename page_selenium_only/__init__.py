@@ -8,6 +8,6 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--disable-software-rasterizer")
 driver = webdriver.Chrome(service= service, options= chrome_options)  # Optional argument, if not specified will search path.
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 5)
 
 

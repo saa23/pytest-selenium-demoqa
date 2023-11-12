@@ -1,1 +1,19 @@
-DEMOQA_URL = "https://demoqa.com/"
+DEMOQA_URL = 'https://demoqa.com/'
+ELEMENTS_URL = 'https://demoqa.com/elements'
+FORMS_URL = 'https://demoqa.com/forms'
+ALERTS_URL = 'https://demoqa.com/alertsWindows'
+WIDGETS_URL = 'https://demoqa.com/widgets'
+INTERACTIONS_URL = 'https://demoqa.com/interaction'
+BOOKSTORE_URL = 'https://demoqa.com/books'
+
+ELEMENTS_TEXTBOX_URL = 'https://demoqa.com/text-box'
+ELEMENTS_CHECKBOX_URL = 'https://demoqa.com/checkbox'
+ELEMENTS_RADIO_URL = 'https://demoqa.com/radio-button'
+ELEMENTS_WEBTABLES_URL = 'https://demoqa.com/webtables'
+ELEMENTS_BUTTON_URL = 'https://demoqa.com/buttons'
+ELEMENTS_LINKS_URL = 'https://demoqa.com/links'
+ELEMENTS_BROKENLINKS_URL = 'https://demoqa.com/broken'
+ELEMENTS_UPLOAD_DOWNLOAD_URL = 'https://demoqa.com/upload-download'
+ELEMENTS_DYNAMIC_PROP_URL = 'https://demoqa.com/dynamic-properties'
+
+FORMS_PRACTICE_URL = 'https://demoqa.com/automation-practice-form'

@@ -1,10 +1,10 @@
-selenium
-webdriver-manager
-python-dotenv
-openpyxl
-pandas
-pytest
-pytest-html
-softest
-ddt
-PyYAML
+selenium==4.15.2
+webdriver-manager==4.0.1
+python-dotenv==1.0.0
+openpyxl==3.1.2
+pandas==2.1.2
+pytest==7.4.3
+pytest-html==4.1.1
+softest==1.2.0.0
+ddt== 1.7.0
+PyYAML==6.0.1
